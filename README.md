@@ -13,14 +13,14 @@ ip 反查 地理地址
 下載資料庫 (須註冊)
 Free IP2Location BIN Data: https://lite.ip2location.com
 
-## 參數2: ip csv檔路徑 例：ip.csv
+## 參數2: ip csv檔路徑 例：ip.csv 可自行命名
 ### ip.csv 格式(不須標頭)
 
 121.22.24,22,xxxx<BR>
 11.1.3.1,xxxx<BR>
 222.25.112,xxx<BR>
 
-## 參數3: ip+location csv檔路徑 例：自行命名：iplocation20200925_1326.csv
+## 參數3: ip+location csv檔路徑 例：可自行命名：iplocation20200925_1326.csv
 
 ### iplocation20200925_1326.csv (ip,地理位置)
 
@@ -47,6 +47,7 @@ Free IP2Location BIN Data: https://lite.ip2location.com
 	Elevation = 0.0
 	UsageType = Not_Supported
 "<BR>
+	
 "11.1.3.1","IP2LocationRecord:
 	IP Address = 11.1.3.1
 	Country Short = US
@@ -70,6 +71,7 @@ Free IP2Location BIN Data: https://lite.ip2location.com
 	Elevation = 0.0
 	UsageType = Not_Supported
 "<BR>
+	
 "222.25.112","IP2LocationRecord:
 	IP Address = 222.25.112
 	Country Short = CN
