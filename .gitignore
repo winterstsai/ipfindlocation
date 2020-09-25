@@ -9,3 +9,35 @@ buildNumber.properties
 .mvn/timing.properties
 # https://github.com/takari/maven-wrapper#usage-without-binary-jar
 .mvn/wrapper/maven-wrapper.jar
+/.settings/  
+/target/  
+# built application files  
+*.apk  
+*.ap_  
+# files for the dex VM  
+*.dex  
+# Java class files  
+*.class  
+*.jar  
+# generated files  
+bin/  
+gen/  
+# Eclipse project files  
+.classpath  
+.project  
+.DS_Stor:  
+# built application files  
+*.apk  
+*.ap_  
+# files for the dex VM  
+*.dex  
+# Java class files  
+*.class  
+*.jar  
+# generated files  
+bin/  
+gen/  
+# Eclipse project files  
+.classpath  
+.project  
+.DS_Store
