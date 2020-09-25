@@ -16,9 +16,9 @@ Free IP2Location BIN Data: https://lite.ip2location.com
 ## 參數2: ip csv檔路徑 例：ip.csv
 ### ip.csv 格式(不須標頭)
 
-121.22.24,22,xxxx
-11.1.3.1,xxxx
-222.25.112,xxx
+121.22.24,22,xxxx<BR>
+11.1.3.1,xxxx<BR>
+222.25.112,xxx<BR>
 
 ## 參數3: ip+location csv檔路徑 例：自行命名：iplocation20200925_1326.csv
 
@@ -46,7 +46,7 @@ Free IP2Location BIN Data: https://lite.ip2location.com
 	MobileBrand = Not_Supported
 	Elevation = 0.0
 	UsageType = Not_Supported
-"
+"<BR>
 "11.1.3.1","IP2LocationRecord:
 	IP Address = 11.1.3.1
 	Country Short = US
@@ -69,7 +69,7 @@ Free IP2Location BIN Data: https://lite.ip2location.com
 	MobileBrand = Not_Supported
 	Elevation = 0.0
 	UsageType = Not_Supported
-"
+"<BR>
 "222.25.112","IP2LocationRecord:
 	IP Address = 222.25.112
 	Country Short = CN
@@ -92,7 +92,7 @@ Free IP2Location BIN Data: https://lite.ip2location.com
 	MobileBrand = Not_Supported
 	Elevation = 0.0
 	UsageType = Not_Supported
-"
+"<BR>
 
 ### 參考網址
 
