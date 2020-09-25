@@ -4,23 +4,55 @@
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>com.winters</groupId>
 	<artifactId>ipfindlocation</artifactId>
-	<version>0.0.1-SNAPSHOT</version>
+	<version>0.0.1</version>
+	<properties>
+    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <encoding>UTF-8</encoding>
+        <java.version>1.10</java.version>
+        <maven.compiler.source>1.10</maven.compiler.source>
+        <maven.compiler.target>1.10</maven.compiler.target>
+	</properties>
 
-<dependencies>
+	<dependencies>
 
 
-<!-- https://mvnrepository.com/artifact/com.ip2location/ip2location-java -->
-<dependency>
-    <groupId>com.ip2location</groupId>
-    <artifactId>ip2location-java</artifactId>
-    <version>8.4.0</version>
-</dependency>
+		<!-- https://mvnrepository.com/artifact/com.ip2location/ip2location-java -->
+		<dependency>
+			<groupId>com.ip2location</groupId>
+			<artifactId>ip2location-java</artifactId>
+			<version>8.4.0</version>
+		</dependency>
 
-    <dependency>
-        <groupId>com.opencsv</groupId>
-        <artifactId>opencsv</artifactId>
-        <version>5.2</version>
-    </dependency>
-</dependencies>
+		<dependency>
+			<groupId>com.opencsv</groupId>
+			<artifactId>opencsv</artifactId>
+			<version>5.2</version>
+		</dependency>
+	</dependencies>
+<!-- https://maven.apache.org/plugins/maven-shade-plugin/examples/executable-jar.html -->
+	<build>
+    <plugins>
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-shade-plugin</artifactId>
+        <version>3.2.4</version>
+        <executions>
+          <execution>
+            <phase>package</phase>
+            <goals>
+              <goal>shade</goal>
+            </goals>
+            <configuration>
+              <transformers>
+                <transformer implementation="org.apache.maven.plugins.shade.resource.ManifestResourceTransformer">
+                  <mainClass>com.winters.Main</mainClass>
+                </transformer>
+              </transformers>
+            </configuration>
+          </execution>
+        </executions>
+      </plugin>
+    </plugins>
+  </build>
 
 </project>
