@@ -9,25 +9,29 @@ import com.ip2location.IP2Location;
 import com.ip2location.IPResult;
 import com.opencsv.CSVReader;
 import com.opencsv.CSVWriter;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 /**
- * @author winterstsai 
+ * @author winterstsai
  * 
- * <pre>
+ *         <pre>
  * ip反查地理位置 
  * 須下載資料庫
  * 說明頁
  * https://github.com/winterstsai/com.winters
- * </pre>
+ *         </pre>
  */
 public class Main {
+	private static Logger logger = LoggerFactory.getLogger(Main.class);
 	private static String ipCsvPath;
 	private static String locationDBPath;
 	private static String locationCsvPath;
 
 	public static void main(String[] args) {
+		logger.info("Start...");
 		if (args.length < 3 || args[0] == null || args[1] == null || args[2] == null) {
-			System.out.println("Proper Usage is: java program locationDBPath ipCsvPath locationCsvPath");
+			logger.error("Proper Usage is: java program locationDBPath ipCsvPath locationCsvPath");
 			System.exit(0);
 		}
 		ipCsvPath = args[1];// ip csv檔案位置
@@ -44,9 +48,10 @@ public class Main {
 				writer.writeNext(new String[] { ip, location });
 			}
 		} catch (Exception e) {
-			System.out.println(e);
-			e.printStackTrace(System.out);
-		}
+			logger.error("An exception occurred!", e);
+        } finally {
+        	logger.info("Finish");
+        }
 	}
 
 	/**
@@ -65,27 +70,26 @@ public class Main {
 
 			IPResult rec = loc.IPQuery(ip);
 			if ("OK".equals(rec.getStatus())) {
-				System.out.println(rec);
 				message = rec.getCountryShort();
 			} else if ("EMPTY_IP_ADDRESS".equals(rec.getStatus())) {
-				System.out.println("IP address cannot be blank.");
+//				System.out.println("IP address cannot be blank.");
 				message = "IP address cannot be blank.";
 			} else if ("INVALID_IP_ADDRESS".equals(rec.getStatus())) {
-				System.out.println("Invalid IP address.");
+//				System.out.println("Invalid IP address.");
 				message = "Invalid IP address.";
 			} else if ("MISSING_FILE".equals(rec.getStatus())) {
-				System.out.println("Invalid database path.");
+//				System.out.println("Invalid database path.");
 				message = "Invalid database path.";
 			} else if ("IPV6_NOT_SUPPORTED".equals(rec.getStatus())) {
-				System.out.println("This BIN does not contain IPv6 data.");
+//				System.out.println("This BIN does not contain IPv6 data.");
 				message = "This BIN does not contain IPv6 data.";
 			} else {
-				System.out.println("Unknown error." + rec.getStatus());
+//				System.out.println("Unknown error." + rec.getStatus());
 				message = "Unknown error." + rec.getStatus();
 			}
 		} catch (Exception e) {
-			System.out.println(e);
-			e.printStackTrace(System.out);
+			logger.error("An exception occurred!", e);
+			
 		} finally {
 			loc.Close();
 
