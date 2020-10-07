@@ -3,6 +3,7 @@ ip 反查 地理地址
 
 ## 前置條件
 環境 JRE/JDK 10 以上.
+JDK 下載：https://www.oracle.com/java/technologies/javase-jdk11-downloads.html
 
 ## 執行說明
 執行 jar ipfindlocation-0.0.1.jar 參數1: 資料庫路徑|參數2: ip csv檔路徑|參數3: ip+location csv檔路徑
@@ -95,6 +96,10 @@ Free IP2Location BIN Data: https://lite.ip2location.com
 	Elevation = 0.0
 	UsageType = Not_Supported
 "<BR>
+	
+### 資源檔位置
+
+https://github.com/winterstsai/ipfindlocation/tree/master/demo
 
 ### 參考網址
 
