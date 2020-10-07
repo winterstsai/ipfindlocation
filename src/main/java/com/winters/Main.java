@@ -26,7 +26,7 @@ public class Main {
 	private static String locationCsvPath;
 
 	public static void main(String[] args) {
-		if (args.length == 0 || args[0] == null || args[1] == null || args[2] == null) {
+		if (args.length < 3 || args[0] == null || args[1] == null || args[2] == null) {
 			System.out.println("Proper Usage is: java program locationDBPath ipCsvPath locationCsvPath");
 			System.exit(0);
 		}
