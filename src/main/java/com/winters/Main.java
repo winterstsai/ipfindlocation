@@ -66,7 +66,7 @@ public class Main {
 			IPResult rec = loc.IPQuery(ip);
 			if ("OK".equals(rec.getStatus())) {
 				System.out.println(rec);
-				message = rec.toString();
+				message = rec.getCountryShort();
 			} else if ("EMPTY_IP_ADDRESS".equals(rec.getStatus())) {
 				System.out.println("IP address cannot be blank.");
 				message = "IP address cannot be blank.";
